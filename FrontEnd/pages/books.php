@@ -59,7 +59,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">E-LIB</a>
+                <a class="navbar-brand" href="index.php">E-LIB</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -75,7 +75,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="login.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -99,16 +99,16 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Database</a>
+                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Database</a>
                         </li>
                         <li>
-                            <a href="users.html"><i class="fa fa-bar-chart-o fa-fw"></i> Users</a>
+                            <a href="users.php"><i class="fa fa-bar-chart-o fa-fw"></i> Users</a>
                         </li>
                         <li>
                             <a class="active" href="#"><i class="fa fa-table fa-fw"></i> Books</a>
                         </li>
                         <li>
-                            <a href="trans.html"><i class="fa fa-shopping-cart fa-fw"></i> Transactions</a>
+                            <a href="trans.php"><i class="fa fa-shopping-cart fa-fw"></i> Transactions</a>
                         </li>
                     </ul>
                 </div>
@@ -186,20 +186,97 @@
                                       <th>Access No.</th>
                                       <th>Date</th>
                                       <th>No. of copies</th>
+                                      <th>Action</th>
                                   </tr>
                               </thead>
                               <tbody>
-                                  <tr class="odd gradeX" data-toggle="modal" data-target="#modal2">
+                                  <tr class="odd gradeX">
                                       <td>2012-102</td>
                                       <td>Justine Romero</td>
                                       <td>How to be Just</td>
                                       <td class="center">4123</td>
                                       <td class="center">8-16-17</td>
                                       <td>20</td>
+                                      <td>
+                                      <div class="btn-group">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#modalview">
+                                            View
+                                        </button>
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#modal2">
+                                            Edit
+                                        </button>
+                                      </div>
+                                    </td>
                                   </tr>
                               </tbody>
                           </table>
                           <!-- /.table-responsive -->
+                          <!--modalview content-->
+                          <div class="modal fade" id="modalview" role="dialog">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 style="color:red;"><span class="glyphicon glyphicon-book"></span> View Book entry</h4>
+                                </div>
+                                <div class="modal-body">
+                                  <form>
+                                      <div class="form-group">
+                                        <label for="callnumber">Call Number:</label>
+                                        <h5>2012-102</h5>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="author">Author:</label>
+                                        <h5>THird Iringan</h5>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="title">Title:</label>
+                                        <h5>How to be Bobo</h5>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="access">Access no:</label>
+                                        <h5>4123</h5>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="date">Date:</label>
+                                        <h5>8-16-17</h5>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="nocopies">No. of copies:</label>
+                                        <h5>20</h5>
+                                      </div> 
+                                  </form>
+                                  <table width="100%" class="table table-striped table-bordered table-hover table-responsive" id="dataTables-example">
+                                    <thead>
+                                      <tr>
+                                        <th>Copy No.</th>
+                                        <th>Control No</th>
+                                        <th>Actions</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr class="odd gradeX">
+                                        <td>1</td>
+                                        <td>2012-102</td>
+                                        <td>
+                                          <div>
+                                            <a>
+                                              <button class="btn btn-primary btn-xs">
+                                                Borrow
+                                              </button>
+                                            </a>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                                <div class="modal-footer">
+                                  
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                           <div class="modal fade" id="modal2" role="dialog">
                             <div class="modal-dialog">
 

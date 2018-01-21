@@ -48,7 +48,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">E-LIB</a>
+                <a class="navbar-brand" href="index.php">E-LIB</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -64,7 +64,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="login.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -88,16 +88,16 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Database</a>
+                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Database</a>
                         </li>
                         <li>
-                            <a href="users.html"><i class="fa fa-bar-chart-o fa-fw"></i> Users</a>
+                            <a href="users.php"><i class="fa fa-bar-chart-o fa-fw"></i> Users</a>
                         </li>
                         <li>
-                            <a href="books.html"><i class="fa fa-table fa-fw"></i> Books</a>
+                            <a href="books.php"><i class="fa fa-table fa-fw"></i> Books</a>
                         </li>
                         <li>
-                            <a class="active" href="trans.html"><i class="fa fa-shopping-cart fa-fw"></i> Transactions</a>
+                            <a class="active" href="trans.php"><i class="fa fa-shopping-cart fa-fw"></i> Transactions</a>
                         </li>
                     </ul>
                 </div>
