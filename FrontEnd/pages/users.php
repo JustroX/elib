@@ -255,9 +255,10 @@
                                   <table width="100%" class="table table-striped table-bordered table-hover table-responsive" id="dataTables-example">
                                     <thead>
                                       <tr>
-                                        <th>Book Title</th>
-                                        <th>Control No</th>
-                                        <th>Book ID</th>
+                                        <th>Call Number</th>
+                                        <th>Author</th>
+                                        <th>Title</th>
+                                        <th>Access No.</th>
                                         <th>Date Borrowed</th>
                                         <th>Date Returned</th>
                                         <th>Actions</th>
@@ -265,9 +266,10 @@
                                     </thead>
                                     <tbody>
                                       <tr class="odd gradeX">
-                                        <td>Physics</td>
                                         <td>2012-035</td>
-                                        <td>123123</td>
+                                        <td>Justine Romero</td>
+                                        <td>Being a Physics God</td>
+                                        <td>21124</td>
                                         <td>1-19-18</td>
                                         <td>1-20-18</td>
                                         <td>
