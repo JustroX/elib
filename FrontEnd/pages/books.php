@@ -251,6 +251,7 @@
                                       <tr>
                                         <th>Copy No.</th>
                                         <th>Control No</th>
+                                        <th>Status</th>
                                         <th>Actions</th>
                                       </tr>
                                     </thead>
@@ -258,6 +259,7 @@
                                       <tr class="odd gradeX">
                                         <td>1</td>
                                         <td>2012-102</td>
+                                        <td>Available</td>
                                         <td>
                                           <div>
                                             <a>

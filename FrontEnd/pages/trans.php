@@ -32,13 +32,22 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+      .modal-header, h4, .close {
+      background-color: #5cb85c;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+      }
+      .modal-footer {
+        background-color: #f9f9f9;
+      }
+    </style>
 
 </head>
 
 <body>
-
     <div id="wrapper">
-
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
@@ -117,117 +126,60 @@
               <div class="col-lg-12">
                   <div class="panel panel-default">
                       <div class="panel-heading">
-                          Table of Sections by grade level
+                          Table of transactions
                       </div>
                       <!-- /.panel-heading -->
                       <div class="panel-body">
-                          <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                              <thead>
-                                  <tr>
-                                      <th>Grade 7</th>
-                                  </tr>
-                              </thead>
-                              <tbody>
-                                  <tr class="odd gradeX">
-                                      <td>Emerald</td>
-                                      <td>Diamond</td>
-                                      <td>Sapphire</td>
-                                  </tr>
-                              </tbody>
-                              <thead>
-                                  <tr>
-                                      <th>Grade 8</th>
-                                  </tr>
-                              </thead>
-                              <tbody>
-                                <tr class="odd gradeX">
-                                    <td>Ilang-ilang</td>
-                                    <td>Rosal</td>
-                                    <td>Sampaguita</td>
-                                </tr>
-                              </tbody>
-                              <thead>
-                                  <tr>
-                                      <th>Grade 9</th>
-                                  </tr>
-                              </thead>
-                              <tbody>
-                                <tr class="odd gradeX">
-                                    <td>Beryllium</td>
-                                    <td>Platinum</td>
-                                    <td>Silicon</td>
-                                </tr>
-                              </tbody>
-                              <thead>
-                                  <tr>
-                                      <th>Grade 10</th>
-                                  </tr>
-                              </thead>
-                              <tbody>
-                                <tr class="odd gradeX">
-                                    <td>Electron</td>
-                                    <td>Graviton</td>
-                                    <td>Photon</td>
-                                </tr>
-                              </tbody>
-                          </table>
                           <table width="100%" class="table table-striped table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Grade 11</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                              <tr class="odd gradeX">
-                                  <td width="20%">1</td>
-                                  <td>2</td>
-                                  <td>3</td>
-                                  <td>4</td>
-                                  <td>5</td>
-                              </tr>
-                            </tbody>
-                            <thead>
-                                <tr>
-                                    <th>Grade 12</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                              <tr class="odd gradeX">
-                                  <td>1</td>
-                                  <td>2</td>
-                                  <td>3</td>
-                                  <td>4</td>
-                                  <td>5</td>
-                              </tr>
-                            </tbody>
+                              <thead>
+                                <th>Ref No.</th>
+                                <th>Student</th>
+                                <th>Book Title</th>
+                                <th>Control No.</th>
+                                <th>Date Borrowed</th>
+                                <th>Date Returned</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                              </thead>
+                              <tbody>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                  <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modalpay">
+                                    Pay
+                                  </button>
+                                </td>
+                              </tbody>
                           </table>
                           <!-- /.table-responsive -->
-                          <div class="modal fade" id="modal2" role="dialog">
+                          <div class="modal fade" id="modalpay" role="dialog">
                             <div class="modal-dialog">
-
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 style="color:red;"><span class="glyphicon glyphicon-user"></span> Edit User entry</h4>
-                                  </div>
-                                  <div class="modal-body">
-                                    <form>
-                                      <div class="form-group">
-                                        <label for="name">Name:</label>
-                                        <input type="text" class="form-control" id="name" placeholder="Enter Name">
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="code">ID Code:</label>
-                                        <input type="text" class="form-control" id="code" placeholder="Enter ID Code">
-                                      </div>
-                                      <button type="submit" class="btn btn-success btn-block"> Submit</button>
-                                    </form>
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                                  </div>
+                              <!-- Modal content-->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 style="color:red;"><span class="glyphicon glyphicon-user"></span> User entry</h4>
                                 </div>
+                                <div class="modal-body">
+                                  <form>
+                                    <div class="form-group">
+                                      <label for="name">Amount to be paid:</label>
+                                      <input type="text" class="form-control">
+                                    </div>
+                                    <button type="submit" class="btn btn-success btn-block">Pay</button>
+                                  </form>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                                </div>
+                              </div>
                             </div>
                           </div>
                       </div>

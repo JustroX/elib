@@ -132,7 +132,6 @@
                         <button type="button" class="btn btn-outline btn-primary" id="myBtn">Add entry</button>
                         <div class="modal fade" id="myModal" role="dialog">
                           <div class="modal-dialog">
-
                               <!-- Modal content-->
                               <div class="modal-content">
                                 <div class="modal-header">
