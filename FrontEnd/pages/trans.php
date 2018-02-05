@@ -127,7 +127,55 @@
                   <div class="panel panel-default">
                       <div class="panel-heading">
                           Table of transactions
+                          <button type="button" class="btn btn-outline btn-primary" data-toggle="modal" data-target="#modaladd">Add entry</button>
                       </div>
+                      <div class="modal fade" id="modaladd" role="dialog">
+                          <div class="modal-dialog">
+                              <!-- Modal content-->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 style="color:red;"><span class="glyphicon glyphicon-user"></span> Transaction entry</h4>
+                                </div>
+                                <div class="modal-body">
+                                  <form>
+                                    <div class="form-group">
+                                      <label for="name">Ref No.:</label>
+                                      <input type="text" class="form-control" id="name" placeholder="Ref No.">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="code">Student:</label>
+                                      <input type="text" class="form-control" id="code" placeholder="Student">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="code">Book Title:</label>
+                                      <input type="text" class="form-control" id="batch" placeholder="Book Title">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="code">Control No.:</label>
+                                      <input type="text" class="form-control" id="batch" placeholder="Control No.">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="code">Date Borrowed:</label>
+                                      <input type="text" class="form-control" id="batch" placeholder="Date Borrowed">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="code">Date Returned:</label>
+                                      <input type="text" class="form-control" id="batch" placeholder="Date Returned">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="code">Amount:</label>
+                                      <input type="text" class="form-control" id="batch" placeholder="Amount">
+                                    </div>
+                                    <button type="submit" class="btn btn-success btn-block"> Submit</button>
+                                  </form>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
                       <!-- /.panel-heading -->
                       <div class="panel-body">
                           <table width="100%" class="table table-striped table-bordered table-hover">

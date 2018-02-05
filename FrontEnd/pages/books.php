@@ -128,7 +128,7 @@
               <div class="col-lg-12">
                   <div class="panel panel-default">
                       <div class="panel-heading">
-                          DataTables Advanced Tables
+                          Table of Books
                           <button type="button" class="btn btn-outline btn-primary" id="myBtn">Add entry</button>
                           <div class="modal fade" id="myModal" role="dialog">
                             <div class="modal-dialog">
