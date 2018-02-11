@@ -140,7 +140,7 @@
                                     <h4 style="color:red;"><span class="glyphicon glyphicon-book"></span> Book entry</h4>
                                   </div>
                                   <div class="modal-body">
-                                    <form>
+                                    <form method="POST" action="addbooks.php">
                                       <div class="form-group">
                                         <label for="callnumber">Call Number:</label>
                                         <input type="text" class="form-control" id="cn" placeholder="Enter Call Number">

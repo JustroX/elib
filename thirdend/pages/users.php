@@ -179,7 +179,7 @@ include("viewusers.php")
                                 <?php for($i=0;$i<count($user);$i++){ ?>
                                 <tr class="odd gradeX">
                                     <td><?php echo $user[$i]['name'];?></td>
-                                    <td>2012-081</td>
+                                    <td><?php echo $user[$i]['id_code'];?></td>
                                     <td><?php echo $user[$i]['batch'];?></td>
                                     <td>
                                       <div class="btn-group">
