@@ -10,8 +10,10 @@ include("conn.php");
 		run generic query
 		str is the sql
 */
+
 function query($str)
 {
+	global $con;
 	mysqli_query($con,$str);
 	echo mysqli_error($con);
 }
@@ -23,6 +25,7 @@ function query($str)
 */
 function rquery($str)
 {
+	global $con;
 	$res = mysqli_query($con,$str);
 	echo mysqli_error($con);
 	return $res;
@@ -111,11 +114,17 @@ function insert($table,$arr,$where=[])
 function select($table,$row,$where=[])
 {
 	$rows = [];
-	foreach ($row as $key => $value) 
+	if($row!="*")
 	{
-		array_push($rows, "`$value`");
+		foreach ($row as $key => $value) 
+		{
+			array_push($rows, "`$value`");
+		}
+		$str = "SELECT ".implode(" , ", ($rows))." FROM `$table`";
 	}
-	$str = "SELECT ".implode(" , ", $rows)." FROM `$table`";
+	else
+		$str = "SELECT * FROM `$table`";
+		
 	if($where)
 	{
 		$str .= " WHERE " . parse_condtions($where);		
@@ -131,7 +140,7 @@ function select($table,$row,$where=[])
 */
 function arrify($res)
 {
-	var $arr = [];
+	$arr = [];
 	while($val = mysqli_fetch_assoc($res))
 	{
 		array_push($arr, $val);
