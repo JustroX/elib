@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2018 at 07:54 AM
+-- Generation Time: Feb 11, 2018 at 08:00 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `book` (
   `id` int(11) NOT NULL,
-  `book_id` text NOT NULL,
-  `name` text NOT NULL,
+  `call_number` text NOT NULL,
+  `title` text NOT NULL,
   `author` text NOT NULL,
   `category` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -42,7 +42,7 @@ CREATE TABLE `book` (
 
 CREATE TABLE `copy` (
   `id` int(11) NOT NULL,
-  `control` text NOT NULL,
+  `access_number` text NOT NULL,
   `available` int(11) NOT NULL,
   `parent` int(11) NOT NULL,
   `date_borrowed` text NOT NULL
