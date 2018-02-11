@@ -5,4 +5,5 @@ $code=$_POST["code"];
 $batch=$_POST["batch"];
 $arr=["name"=>$name,"batch"=>$batch];
 insert("user",$arr);
+header('Location: users.php');
 ?>

@@ -176,10 +176,11 @@ include("viewusers.php")
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php for($i=0;$i<count($user);$i++){ ?>
                                 <tr class="odd gradeX">
-                                    <td><?$user[1]?></td>
+                                    <td><?php echo $user[$i]['name'];?></td>
                                     <td>2012-081</td>
-                                    <td>2018</td>
+                                    <td><?php echo $user[$i]['batch'];?></td>
                                     <td>
                                       <div class="btn-group">
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#modalview">
@@ -191,21 +192,10 @@ include("viewusers.php")
                                       </div>
                                     </td>
                                 </tr>
+                                <?php }?>
                             </tbody>
                         </table>
                         <!-- /.table-responsive -->
-                        <div class="right">
-                          <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-                            <li class="page-item"><a class="page-link" href="#">5</a></li>
-                            <li class="page-item"><a class="page-link" href="#">6</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                          </ul>
-                        </div>
                         <div class="modal fade" id="modal2" role="dialog">
                           <div class="modal-dialog">
                               <!-- Modal content-->
