@@ -183,7 +183,7 @@ include("viewusers.php")
                                     <td><?php echo $user[$i]['batch'];?></td>
                                     <td>
                                       <div class="btn-group">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#modalview">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#modalview" onclick='update_modal(<?php echo json_encode($user[$i]); ?>)'>
                                             View
                                         </button>
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#modal2">
@@ -237,7 +237,7 @@ include("viewusers.php")
                                 </div>
                                 <div class="modal-body">
                                   <label for="name">Name:</label>
-                                  <h5>Justine Romero</h5>
+                                  <h5  id="modal-name">Justine Romero</h5>
                                   <label for="code">ID Code:</label>
                                   <h5>2012-081</h5>
                                   <label for="code">Batch No:</label>
@@ -316,6 +316,11 @@ include("viewusers.php")
       $("#myModal").modal();
       });
     });
+    //dito third
+    function update_modal(user)
+    {
+      $("#modal-name").text(user.name);
+    }
     </script>
 </body>
 
