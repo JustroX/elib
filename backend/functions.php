@@ -72,7 +72,7 @@ function parse_conditions($arr)
 			return value:
 				"`key1`='val1' or `key2`='val2'"
 */
-function parse_conditions_or($arr)
+function parse_conditions_or($var)
 {
 	if(isset($var->or))
 	{
