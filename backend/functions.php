@@ -153,10 +153,9 @@ function update($table,$arr,$where=[])
 	for ($i=0; $i < sizeof($keys); $i++) 
 	{ 
 		$tstr = "";
-	 	$tstr = "`".$keys[$i]."`=".json_encode($vals[$i])." ".(($i==sizeof($keys)-1)?"":",")." ";
-	 	$str .= $str;
+	 	$tstr = $keys[$i]."=".$vals[$i]." ".(($i==sizeof($keys)-1)?"":",")." ";
+	 	$str .= $tstr;
 	} 
-
 	if($where)
 	{
 		$str .= " WHERE " . parse_condtions($where);

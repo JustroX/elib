@@ -133,6 +133,37 @@ function select($table,$row,$where=[])
 	return arrify($res);
 }
 /*
+	update(table,values,where)
+		update table values
+		e.g. update(`user`,['id'=>1,'name'=>'yey'])
+*/
+
+function update($table,$arr,$where=[])
+{
+
+	$keys = [];
+	$vals = [];
+	foreach ($arr as $key => $value)
+	{
+		array_push($keys, "`$key`");
+		array_push($vals, json_encode($value));
+	}
+	$str  = "UPDATE `$table` SET ";
+	
+	for ($i=0; $i < sizeof($keys); $i++) 
+	{ 
+		$tstr = "";
+	 	$tstr = $keys[$i]."=".$vals[$i]." ".(($i==sizeof($keys)-1)?"":",")." ";
+	 	$str .= $tstr;
+	} 
+	if($where)
+	{
+		$str .= " WHERE " . parse_condtions($where);
+	}
+	query($str);
+}
+
+/*
 	arrify(res)
 		converts mysqli result into an array
 		e.g. 	arrify(mysqli_query("SELECT `size` FROM `user`"))
@@ -147,5 +178,6 @@ function arrify($res)
 	}
 	return $arr;
 }
+
 
 ?>
