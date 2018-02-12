@@ -74,12 +74,7 @@ function parse_conditions($arr)
 */
 function parse_conditions_or($var)
 {
-	if(isset($var->or))
-	{
-		return "( " . parse_conditions($var->or[0]) . " OR " . parse_conditions($var->or[1]) . ") ";
-	}
-	else
-		die("Invalid argument $arr in function: <b>parse_conditions_or</b>");
+	return "( " . parse_conditions($var[0]) . " OR " . parse_conditions($var[1]) . ") ";
 }
 /*
 	insert(table,arr,conditions)

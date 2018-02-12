@@ -75,12 +75,16 @@ function parse_conditions($arr)
 */
 function parse_conditions_or($var)
 {
+<<<<<<< HEAD
 	if(isset($var["or"]))
 	{
 		return "( " . parse_conditions($var->or[0]) . " OR " . parse_conditions($var->or[1]) . ") ";
 	}
 	else
 		die("Invalid argument $var in function: <b>parse_conditions_or</b>");
+=======
+	return "( " . parse_conditions($var[0]) . " OR " . parse_conditions($var[1]) . ") ";
+>>>>>>> 2cec8a6bf2b390bca6f5113458deef2d269c5ebf
 }
 /*
 	insert(table,arr,conditions)
@@ -101,7 +105,7 @@ function insert($table,$arr,$where=[])
 	$str  = "INSERT INTO `$table` (".implode(",", $keys).") VALUES (".implode(",", $vals).")";
 	if($where)
 	{
-		$str .= " WHERE " . parse_condtions($where);
+		$str .= " WHERE " . parse_conditions($where);
 	}
 	query($str);
 }
@@ -159,7 +163,7 @@ function update($table,$arr,$where=[])
 	} 
 	if($where)
 	{
-		$str .= " WHERE " . parse_conditions($where);
+		$str .= " WHERE " . parse_condtions($where);
 	}
 	query($str);
 }
