@@ -53,6 +53,7 @@ function rquery($str)
 */
 function parse_conditions($arr)
 {
+	echo $var["or"];
 	$conditions = [];
 	foreach ($arr as $key => $value)
 	{
@@ -72,14 +73,14 @@ function parse_conditions($arr)
 			return value:
 				"`key1`='val1' or `key2`='val2'"
 */
-function parse_conditions_or($arr)
+function parse_conditions_or($var)
 {
-	if(isset($var->or))
+	if(isset($var["or"]))
 	{
 		return "( " . parse_conditions($var->or[0]) . " OR " . parse_conditions($var->or[1]) . ") ";
 	}
 	else
-		die("Invalid argument $arr in function: <b>parse_conditions_or</b>");
+		die("Invalid argument $var in function: <b>parse_conditions_or</b>");
 }
 /*
 	insert(table,arr,conditions)

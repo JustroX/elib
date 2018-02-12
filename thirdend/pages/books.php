@@ -185,10 +185,10 @@ include("viewusers.php");
                               <tbody>
                                   <?php for($i=0;$i<count($book);$i++){ ?>
                                   <tr class="odd gradeX">
-                                      <td><?php echo $user[$i]['call_number'];?></td>
-                                      <td><?php echo $user[$i]['author'];?></td>
-                                      <td><?php echo $user[$i]['title'];?></td>
-                                      <td><?php echo $user[$i]['category'];?></td>
+                                      <td><?php echo $book[$i]['call_number'];?></td>
+                                      <td><?php echo $book[$i]['author'];?></td>
+                                      <td><?php echo $book[$i]['title'];?></td>
+                                      <td><?php echo $book[$i]['category'];?></td>
                                       <td>
                                       <div class="btn-group">
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#modalview">
