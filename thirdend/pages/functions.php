@@ -31,7 +31,7 @@ function rquery($str)
 	return $res;
 }
 /*
-	parse_condtions(arr)
+	parse_conditions(arr)
 		parse condition array
 		returns string
 		i.e `key1`='value1' and `key2`=>'value2'
@@ -122,7 +122,7 @@ function select($table,$row,$where=[])
 		
 	if($where)
 	{
-		$str .= " WHERE " . parse_condtions($where);		
+		$str .= " WHERE " . parse_conditions($where);		
 	}
 	$res = rquery($str);
 	return arrify($res);
@@ -153,7 +153,7 @@ function update($table,$arr,$where=[])
 	} 
 	if($where)
 	{
-		$str .= " WHERE " . parse_condtions($where);
+		$str .= " WHERE " . parse_conditions($where);
 	}
 	query($str);
 }
