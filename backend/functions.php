@@ -100,7 +100,7 @@ function insert($table,$arr,$where=[])
 	$str  = "INSERT INTO `$table` (".implode(",", $keys).") VALUES (".implode(",", $vals).")";
 	if($where)
 	{
-		$str .= " WHERE " . parse_condtions($where);
+		$str .= " WHERE " . parse_conditions($where);
 	}
 	query($str);
 }

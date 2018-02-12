@@ -158,7 +158,7 @@ function update($table,$arr,$where=[])
 	} 
 	if($where)
 	{
-		$str .= " WHERE " . parse_condtions($where);
+		$str .= " WHERE " . parse_conditions($where);
 	}
 	query($str);
 }
