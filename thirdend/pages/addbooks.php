@@ -1,9 +1,10 @@
 <?php
 include("functions.php");
 $cn=$_POST["cn"];
-$code=$_POST["code"];
-$batch=$_POST["batch"];
-$arr=["id_code"=>$code,"name"=>$name,"batch"=>$batch];
-insert("user",$arr);
-header('Location: users.php');
+$ti=$_POST["ti"];
+$au=$_POST["au"];
+$ca=$_POST["ca"];	
+$arr1=["call_number"=>$cn,"title"=>$ti,"author"=>$au,"category"=>$ca];
+insert("book",$arr1);
+header('Location: books.php');
 ?>

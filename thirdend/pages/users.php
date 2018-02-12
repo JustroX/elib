@@ -205,18 +205,18 @@ include("viewusers.php")
                                   <h4 style="color:red;"><span class="glyphicon glyphicon-user"></span> Edit User entry</h4>
                                 </div>
                                 <div class="modal-body">
-                                  <form>
+                                  <form method="POST" action="edituser.php">
                                     <div class="form-group">
                                       <label for="name">Name:</label>
-                                      <input type="text" class="form-control" id="name" placeholder="Enter Name">
+                                      <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
                                     </div>
                                     <div class="form-group">
                                       <label for="code">ID Code:</label>
-                                      <input type="text" class="form-control" id="code" placeholder="Enter ID Code">
+                                      <input type="text" class="form-control" id="code" name="code" placeholder="Enter ID Code">
                                     </div>
                                     <div class="form-group">
                                       <label for="code">Batch No:</label>
-                                      <input type="text" class="form-control" id="batch" placeholder="Enter Batch No">
+                                      <input type="text" class="form-control" id="batch" name="batch" placeholder="Enter Batch No">
                                     </div>
                                     <button type="submit" class="btn btn-success btn-block"> Submit</button>
                                   </form>
@@ -237,11 +237,11 @@ include("viewusers.php")
                                 </div>
                                 <div class="modal-body">
                                   <label for="name">Name:</label>
-                                  <h5  id="modal-name">Justine Romero</h5>
+                                  <h5 id="modal-name"></h5>
                                   <label for="code">ID Code:</label>
-                                  <h5>2012-081</h5>
+                                  <h5 id="modal-code"></h5>
                                   <label for="code">Batch No:</label>
-                                  <h5>2018</h5>
+                                  <h5 id="modal-batch"></h5>
                                   <h3>Book History:</h3>
                                   <table width="100%" class="table table-striped table-bordered table-hover table-responsive" id="dataTables-example">
                                     <thead>
@@ -320,6 +320,8 @@ include("viewusers.php")
     function update_modal(user)
     {
       $("#modal-name").text(user.name);
+      $("#modal-code").text(user.id_code);
+      $("#modal-batch").text(user.batch);
     }
     </script>
 </body>

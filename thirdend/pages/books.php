@@ -1,3 +1,6 @@
+<?php
+include("viewusers.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -143,27 +146,19 @@
                                     <form method="POST" action="addbooks.php">
                                       <div class="form-group">
                                         <label for="callnumber">Call Number:</label>
-                                        <input type="text" class="form-control" id="cn" placeholder="Enter Call Number">
+                                        <input type="text" class="form-control" id="cn" name="cn" placeholder="Enter Call Number">
                                       </div>
                                       <div class="form-group">
                                         <label for="author">Author:</label>
-                                        <input type="text" class="form-control" id="au" placeholder="Enter Author">
+                                        <input type="text" class="form-control" id="au" name="au" placeholder="Enter Author">
                                       </div>
                                       <div class="form-group">
                                         <label for="title">Title:</label>
-                                        <input type="text" class="form-control" id="ti" placeholder="Enter Title">
+                                        <input type="text" class="form-control" id="ti" name="ti" placeholder="Enter Title">
                                       </div>
                                       <div class="form-group">
-                                        <label for="access">Access no:</label>
-                                        <input type="text" class="form-control" id="an" placeholder="Enter Access no">
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="date">Date:</label>
-                                        <input type="text" class="form-control" id="da" placeholder="Enter Date">
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="nocopies">No. of copies:</label>
-                                        <input type="text" class="form-control" id="nc" placeholder="Enter No of copies">
+                                        <label for="access">Category:</label>
+                                        <input type="text" class="form-control" id="ca" name="ca" placeholder="Enter Category">
                                       </div>
                                       <button type="submit" class="btn btn-success btn-block"> Submit</button>
                                     </form>
@@ -183,20 +178,17 @@
                                       <th>Call Number</th>
                                       <th>Author</th>
                                       <th>Title</th>
-                                      <th>Access No.</th>
-                                      <th>Date</th>
-                                      <th>No. of copies</th>
+                                      <th>Category</th>
                                       <th>Action</th>
                                   </tr>
                               </thead>
                               <tbody>
+                                  <?php for($i=0;$i<count($book);$i++){ ?>
                                   <tr class="odd gradeX">
-                                      <td>2012-102</td>
-                                      <td>Justine Romero</td>
-                                      <td>How to be Just</td>
-                                      <td class="center">4123</td>
-                                      <td class="center">8-16-17</td>
-                                      <td>20</td>
+                                      <td><?php echo $user[$i]['call_number'];?></td>
+                                      <td><?php echo $user[$i]['author'];?></td>
+                                      <td><?php echo $user[$i]['title'];?></td>
+                                      <td><?php echo $user[$i]['category'];?></td>
                                       <td>
                                       <div class="btn-group">
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#modalview">
@@ -208,6 +200,7 @@
                                       </div>
                                     </td>
                                   </tr>
+                                  <?php }?>
                               </tbody>
                           </table>
                           <!-- /.table-responsive -->
@@ -234,17 +227,9 @@
                                         <h5>How to be Bobo</h5>
                                       </div>
                                       <div class="form-group">
-                                        <label for="access">Access no:</label>
+                                        <label for="access">Category:</label>
                                         <h5>4123</h5>
                                       </div>
-                                      <div class="form-group">
-                                        <label for="date">Date:</label>
-                                        <h5>8-16-17</h5>
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="nocopies">No. of copies:</label>
-                                        <h5>20</h5>
-                                      </div> 
                                   </form>
                                   <table width="100%" class="table table-striped table-bordered table-hover table-responsive" id="dataTables-example">
                                     <thead>
@@ -289,7 +274,7 @@
                                     <h4 style="color:red;"><span class="glyphicon glyphicon-book"></span> Edit Book entry</h4>
                                   </div>
                                   <div class="modal-body">
-                                    <form>
+                                    <form method="POST" action="addbooks.php">
                                       <div class="form-group">
                                         <label for="callnumber">Call Number:</label>
                                         <input type="text" class="form-control" id="cn" placeholder="Enter Call Number">
@@ -303,16 +288,8 @@
                                         <input type="text" class="form-control" id="ti" placeholder="Enter Title">
                                       </div>
                                       <div class="form-group">
-                                        <label for="access">Access no:</label>
-                                        <input type="text" class="form-control" id="an" placeholder="Enter Access no">
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="date">Date:</label>
-                                        <input type="text" class="form-control" id="da" placeholder="Enter Date">
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="nocopies">No. of copies:</label>
-                                        <input type="text" class="form-control" id="nc" placeholder="Enter No of copies">
+                                        <label for="access">Category:</label>
+                                        <input type="text" class="form-control" id="ca" placeholder="Enter Category">
                                       </div>
                                       <button type="submit" class="btn btn-success btn-block"> Submit</button>
                                     </form>
