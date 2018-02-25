@@ -257,7 +257,6 @@ include("viewusers.php")
                                     </thead>
                                     <tbody>
                                       <?php for($i=0;$i<count($trans);$i++){ ?>
-                                      <?php if($trans[$i]["user"]==){?>
                                       <tr class="odd gradeX">
                                         <td><?php echo $trans[$i]['call_number'];?></td>
                                         <td></td>
@@ -274,8 +273,7 @@ include("viewusers.php")
                                             </a>
                                           </div>
                                         </td>
-                                      </tr>
-                                      <?php }?>
+                                      </tr>   
                                       <?php }?>
                                     </tbody>
                                   </table>

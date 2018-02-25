@@ -1,3 +1,6 @@
+<?php
+include("viewusers.php")
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -143,19 +146,23 @@
                                 <th>Actions</th>
                               </thead>
                               <tbody>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                  <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modalpay">
-                                    Pay
-                                  </button>
-                                </td>
+                                <?php for($i=0;$i<count($trans);$i++){ ?>
+                                <tr>
+                                  <td></td>
+                                  <td><?php for($j=0;$j<count($user);$j++){ if($trans[$i]['user']==$user[$j]['id_code']){ echo $user[$j]['name'];}}?></td>
+                                  <td><?php for($j=0;$j<count($user);$j++){ if($trans[$i]['copy']==$book[$j]['call_number']){ echo $book[$j]['title'];}}?></td>
+                                  <td><?php echo $trans[$i]['copy'];?></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>
+                                    <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modalpay">
+                                      Pay
+                                    </button>
+                                  </td>
+                                </tr>
+                                <?php }?>
                               </tbody>
                           </table>
                           <!-- /.table-responsive -->
