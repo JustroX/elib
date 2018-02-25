@@ -272,13 +272,11 @@ include("viewusers.php");
 																	<h4 style="color:red;"><span class="glyphicon glyphicon-book"></span>Borrow book</h4>
 																</div>
 																<div class="modal-body">
-																	<form>
 																			<div class="form-group">
 																				<label for="callnumber">Borrower:</label>
 																				<input type="text" class="form-control" id="stud" placeholder="Enter Student ID">
 																			</div>
-																			<button type="submit" class="btn btn-success btn-block" onclick="borrow()"> Submit</button> 
-																	</form>
+																			<button type="submit" class="btn btn-success btn-block" onclick="borrow()">Submit</button> 
 																</div>
 																<div class="modal-footer">
 																	<button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
@@ -351,7 +349,7 @@ include("viewusers.php");
 		<!-- Custom Theme JavaScript -->
 		<script src="../dist/js/sb-admin-2.js"></script>
 		<script>
-		$(document).ready(function(){
+		$(document).ready(function(){ 
 			$("#myBtn").click(function(){
 			$("#myModal").modal();
 		});
@@ -365,9 +363,8 @@ include("viewusers.php");
 		}
 		function borrow(){
 			var x = document.getElementById("modal-cn").innerHTML;
-			var y = document.getElementById("modal-ti").innerHTML;
-			var z = document.getElementById("stud").innerHTML;
-			window.location = "borrow.php?cn="+x;
+			var z = document.getElementById("stud").value;
+			window.location.href = "borrow.php?cn="+x+"&stud="+z;
 		}
 		</script>
 

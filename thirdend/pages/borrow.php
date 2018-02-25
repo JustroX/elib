@@ -1,5 +1,8 @@
 <?php 
 include("functions.php");
-$ti=$_GET["cn"];
-insert("transactions","");
+$cn=$_GET["cn"];
+$stud=$_GET["stud"];
+$arr=["copy"=>$cn,"user"=>$stud,"date"=>date("Y-m-d")];
+insert("transactions",$arr);
+header('Location: books.php');
 ?>

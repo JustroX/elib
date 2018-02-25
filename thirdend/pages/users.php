@@ -237,11 +237,11 @@ include("viewusers.php")
                                 </div>
                                 <div class="modal-body">
                                   <label for="name">Name:</label>
-                                  <h5 id="modal-name"></h5>
+                                  <h5 id="modal-name" name="mname"></h5>
                                   <label for="code">ID Code:</label>
-                                  <h5 id="modal-code"></h5>
+                                  <h5 id="modal-code" name="mcode"></h5>
                                   <label for="code">Batch No:</label>
-                                  <h5 id="modal-batch"></h5>
+                                  <h5 id="modal-batch" name="mbatch"></h5>
                                   <h3>Book History:</h3>
                                   <table width="100%" class="table table-striped table-bordered table-hover table-responsive" id="dataTables-example">
                                     <thead>
@@ -256,9 +256,11 @@ include("viewusers.php")
                                       </tr>
                                     </thead>
                                     <tbody>
+                                      <?php for($i=0;$i<count($trans);$i++){ ?>
+                                      <?php if($trans[$i]["user"]==){?>
                                       <tr class="odd gradeX">
-                                        <td>2012-035</td>
-                                        <td>Justine Romero</td>
+                                        <td><?php echo $trans[$i]['call_number'];?></td>
+                                        <td></td>
                                         <td>Being a Physics God</td>
                                         <td>21124</td>
                                         <td>1-19-18</td>
@@ -273,6 +275,8 @@ include("viewusers.php")
                                           </div>
                                         </td>
                                       </tr>
+                                      <?php }?>
+                                      <?php }?>
                                     </tbody>
                                   </table>
                                 </div>
