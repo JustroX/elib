@@ -258,11 +258,11 @@ include("viewusers.php")
                                     <tbody>
                                       <?php for($i=0;$i<count($trans);$i++){ ?>
                                       <tr class="odd gradeX">
-                                        <td><?php echo $trans[$i]['call_number'];?></td>
-                                        <td></td>
-                                        <td>Being a Physics God</td>
-                                        <td>21124</td>
-                                        <td>1-19-18</td>
+                                        <td><?php echo $trans[$i]['copy'];?></td>
+                                        <td><?php for($j=0;$j<count($user);$j++){ if($trans[$i]['copy']==$book[$j]['call_number']){ echo $book[$j]['author'];}}?></td>
+                                        <td><?php for($j=0;$j<count($user);$j++){ if($trans[$i]['copy']==$book[$j]['call_number']){ echo $book[$j]['title'];}}?></td>
+                                        <td><?php echo $trans[$i]['copy'];?></td>
+                                        <td><?php echo $trans[$i]['date'];?></td>
                                         <td>1-20-18</td>
                                         <td>
                                           <div>

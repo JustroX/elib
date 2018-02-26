@@ -152,9 +152,9 @@ include("viewusers.php")
                                   <td><?php for($j=0;$j<count($user);$j++){ if($trans[$i]['user']==$user[$j]['id_code']){ echo $user[$j]['name'];}}?></td>
                                   <td><?php for($j=0;$j<count($user);$j++){ if($trans[$i]['copy']==$book[$j]['call_number']){ echo $book[$j]['title'];}}?></td>
                                   <td><?php echo $trans[$i]['copy'];?></td>
+                                  <td><?php echo $trans[$i]['date'];?></td>
                                   <td></td>
-                                  <td></td>
-                                  <td></td>
+                                  <td><?php echo $trans[$i]['amount'];?></td>
                                   <td></td>
                                   <td>
                                     <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modalpay">

@@ -1,3 +1,6 @@
+<?php
+include("viewusers.php")
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -123,7 +126,7 @@
                                     <i class="fa fa-comments fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">26</div>
+                                    <div class="huge"><?php echo count($user);?></div>
                                     <div>Users</div>
                                 </div>
                             </div>
@@ -145,7 +148,7 @@
                                     <i class="fa fa-tasks fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">12</div>
+                                    <div class="huge"><?php echo count($book);?></div>
                                     <div>Books</div>
                                 </div>
                             </div>
@@ -167,7 +170,7 @@
                                     <i class="fa fa-shopping-cart fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">124</div>
+                                    <div class="huge"><?php echo count($trans);?></div>
                                     <div>Transactions</div>
                                 </div>
                             </div>
