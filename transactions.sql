@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 25, 2018 at 03:56 PM
+-- Generation Time: Feb 26, 2018 at 01:32 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -31,19 +31,19 @@ CREATE TABLE `transactions` (
   `copy` text NOT NULL,
   `user` text NOT NULL,
   `amount` int(11) NOT NULL,
-  `date` text NOT NULL
+  `date` text NOT NULL,
+  `days` int(11) NOT NULL,
+  `date today` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `transactions`
 --
 
-INSERT INTO `transactions` (`id`, `copy`, `user`, `amount`, `date`) VALUES
-(1, '2012-1234', '2012', 0, 'now()'),
-(2, '2012-1234', '2012', 0, 'date()'),
-(3, '2012-1234', '2012', 0, '2018-02-25'),
-(4, '2012-1234', '2012', 0, '2018-02-25'),
-(5, '2012-12345', '2012', 0, '2018-02-25');
+INSERT INTO `transactions` (`id`, `copy`, `user`, `amount`, `date`, `days`, `date today`) VALUES
+(6, '2012-055', '2012-001', 10, '2018-02-22', 5, '2018-02-26'),
+(7, '2012-055', '2012-001', 10, '2018-02-22', 5, '2018-02-26'),
+(8, '2012-055', '2012-001', 10, '2018-02-22', 5, '2018-02-26');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +63,7 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
