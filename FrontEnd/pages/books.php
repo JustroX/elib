@@ -291,6 +291,10 @@
                                       <div class="form-group">
                                         <label for="callnumber">Borrower:</label>
                                         <input type="text" class="form-control" id="cn" placeholder="Enter Student ID">
+                                        <label for="name">Ref No.:</label>
+                                        <input type="text" class="form-control">
+                                        <label for="name">Access No:</label>
+                                        <input type="text" class="form-control">
                                       </div>
                                       <button type="submit" class="btn btn-success btn-block"> Submit</button> 
                                   </form>

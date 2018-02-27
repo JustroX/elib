@@ -220,10 +220,6 @@
                                     <div class="form-group">
                                       <label for="name">Amount to be paid:</label>
                                       <input type="text" class="form-control">
-                                      <label for="name">Ref No.:</label>
-                                      <input type="text" class="form-control">
-                                      <label for="name">Access No:</label>
-                                      <input type="text" class="form-control">
                                     </div>
                                     <button type="submit" class="btn btn-success btn-block">Pay</button>
                                   </form>
