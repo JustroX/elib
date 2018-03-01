@@ -246,24 +246,22 @@ include("viewusers.php")
                                   <table width="100%" class="table table-striped table-bordered table-hover table-responsive" id="dataTables-example">
                                     <thead>
                                       <tr>
-                                        <th>Call Number</th>
-                                        <th>Author</th>
                                         <th>Title</th>
                                         <th>Access No.</th>
                                         <th>Date Borrowed</th>
                                         <th>Date Returned</th>
+                                        <th>Status</th>
                                         <th>Actions</th>
                                       </tr>
                                     </thead>
                                     <tbody>
                                       <?php for($i=0;$i<count($trans);$i++){ ?>
                                       <tr class="odd gradeX">
-                                        <td><?php echo $trans[$i]['copy'];?></td>
-                                        <td><?php for($j=0;$j<count($user);$j++){ if($trans[$i]['copy']==$book[$j]['call_number']){ echo $book[$j]['author'];}}?></td>
-                                        <td><?php for($j=0;$j<count($user);$j++){ if($trans[$i]['copy']==$book[$j]['call_number']){ echo $book[$j]['title'];}}?></td>
+                                        <td><?php for($j=0;$j<count($copy);$j++){ if($trans[$i]['copy']==$copy[$j]['access_number']){ echo $copy[$j]['parent'];}}?></td>
                                         <td><?php echo $trans[$i]['copy'];?></td>
                                         <td><?php echo $trans[$i]['date'];?></td>
-                                        <td>1-20-18</td>
+                                        <td><?php echo $trans[$i]['date_returned'];?></td>
+                                        <td><?php if($trans[$i]['date_returned']==""){echo "Borrowed";}else{echo "Paid";}?></td>
                                         <td>
                                           <div>
                                             <a href="trans.php">

@@ -1,0 +1,9 @@
+<?php 
+include("functions.php");
+$acc=$_GET["acc"];
+$arr=["date_returned"=>date("Y-m-d")];
+$arr1=["available"=>1,"date_borrowed"=>""];
+update("transactions",$arr);
+update("copy",$arr1,["access_number"=>$acc]);
+header("Location:trans.php");
+?>

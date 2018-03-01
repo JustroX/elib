@@ -3,12 +3,16 @@ include("functions.php");
 $user=select("user","*");
 $book=select("book","*");
 $trans=select("transactions","*");
+$copy=select("copy","*");
 for($i=0;$i<count($trans);$i++){
-	if ($trans[$i]['date today']!=date("Y-m-d")) {
-		update("transactions",["days"=>$trans[$i]['days']+1,"date today"=>date("Y-m-d")]);
-		if ($trans[$i]['days']>3) {
-			$x=$trans[$i]['days']-2;
-			update("transactions",["amount"=>$x*5]);
+	$timeDiff = abs(strtotime(date("Y/m/d")) - strtotime($trans[$i]['date']));
+	$Days = $timeDiff/86400;
+	if ($trans[$i]['date_returned']=="") {
+		if ($Days<3) {
+			update("transactions",["amount"=>0],["id"=>$trans[$i]['id']]);
+		}
+		else {
+			update("transactions",["amount"=>($Days-2)*5],["id"=>$trans[$i]['id']]);
 		}
 	}
 }

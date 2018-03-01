@@ -53,7 +53,6 @@ function rquery($str)
 */
 function parse_conditions($arr)
 {
-	echo $var["or"];
 	$conditions = [];
 	foreach ($arr as $key => $value)
 	{

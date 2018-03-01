@@ -133,12 +133,12 @@ include("viewusers.php")
                       </div>
                       <!-- /.panel-heading -->
                       <div class="panel-body">
-                          <table width="100%" class="table table-striped table-bordered table-hover">
+                          <table width="100%" class="table table-striped table-bordered table-hover" id="myTable">
                               <thead>
                                 <th>Ref No.</th>
                                 <th>Student</th>
                                 <th>Book Title</th>
-                                <th>Control No.</th>
+                                <th>Access No.</th>
                                 <th>Date Borrowed</th>
                                 <th>Date Returned</th>
                                 <th>Amount</th>
@@ -148,16 +148,16 @@ include("viewusers.php")
                               <tbody>
                                 <?php for($i=0;$i<count($trans);$i++){ ?>
                                 <tr>
-                                  <td></td>
+                                  <td><?php echo $trans[$i]['ref_no'];?></td>
                                   <td><?php for($j=0;$j<count($user);$j++){ if($trans[$i]['user']==$user[$j]['id_code']){ echo $user[$j]['name'];}}?></td>
-                                  <td><?php for($j=0;$j<count($book);$j++){ if($trans[$i]['copy']==$book[$j]['call_number']){ echo $book[$j]['title'];}}?></td>
+                                  <td><?php for($j=0;$j<count($copy);$j++){ if($trans[$i]['copy']==$copy[$j]['access_number']){ echo $copy[$j]['parent'];}}?></td>
                                   <td><?php echo $trans[$i]['copy'];?></td>
                                   <td><?php echo $trans[$i]['date'];?></td>
-                                  <td></td>
+                                  <td><?php echo $trans[$i]['date_returned'];?></td>
                                   <td><?php echo $trans[$i]['amount'];?></td>
-                                  <td></td>
+                                  <td><?php if($trans[$i]['date_returned']==""){echo "Borrowed";}else{echo "Paid";}?></td>
                                   <td>
-                                    <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modalpay">
+                                    <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modalpay" onclick='update_modal(<?php echo json_encode($trans[$i]); ?>);details(this);'>
                                       Pay
                                     </button>
                                   </td>
@@ -175,13 +175,11 @@ include("viewusers.php")
                                   <h4 style="color:red;"><span class="glyphicon glyphicon-user"></span> User entry</h4>
                                 </div>
                                 <div class="modal-body">
-                                  <form>
                                     <div class="form-group">
-                                      <label for="name">Amount to be paid:</label>
-                                      <input type="text" class="form-control">
+                                      <h3 id="modal-ti"></h3><h5 id="modal-acc"></h5>
+                                      <label for="name">Amount to be paid: <h2 id="modal-am"></h2></label>
                                     </div>
-                                    <button type="submit" class="btn btn-success btn-block">Pay</button>
-                                  </form>
+                                    <button class="btn btn-success btn-block" onclick="pay()">Pay</button>
                                 </div>
                                 <div class="modal-footer">
                                   <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
@@ -217,7 +215,22 @@ include("viewusers.php")
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
-
+    <script type="text/javascript"> 
+    function update_modal(trans)
+    {
+      $("#modal-am").text(trans.amount);
+      $("#modal-acc").text(trans.copy);
+    }
+    function details(r){
+      var i = r.parentNode.parentNode.rowIndex;
+      var x = document.getElementById("myTable").rows[i].cells[2].innerHTML;
+      $("#modal-ti").text(x);
+    }
+    function pay(){
+      var x = document.getElementById("modal-acc").innerHTML;
+      window.location.href = "pay.php?acc="+x;
+    }
+    </script>
 </body>
 
 </html>

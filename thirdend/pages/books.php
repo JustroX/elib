@@ -160,6 +160,14 @@ include("viewusers.php");
 																				<label for="access">Category:</label>
 																				<input type="text" class="form-control" id="ca" name="ca" placeholder="Enter Category">
 																			</div>
+																			<div class="form-group">
+																				<label for="access">Number of Copies:</label>
+																				<input type="text" class="form-control" id="co" name="co" placeholder="Enter Number of Copies">
+																			</div>
+																			<div class="form-group">
+																				<label for="access">Starting Access Number:</label>
+																				<input type="text" class="form-control" id="an" name="an" placeholder="Enter Starting Access Number">
+																			</div>
 																			<button type="submit" class="btn btn-success btn-block"> Submit</button>
 																		</form>
 																	</div>
@@ -179,6 +187,7 @@ include("viewusers.php");
 																			<th>Author</th>
 																			<th>Title</th>
 																			<th>Category</th>
+																			<th>No. of Copies Available</th>
 																			<th>Action</th>
 																	</tr>
 															</thead>
@@ -189,6 +198,13 @@ include("viewusers.php");
 																			<td><?php echo $book[$i]['author'];?></td>
 																			<td><?php echo $book[$i]['title'];?></td>
 																			<td><?php echo $book[$i]['category'];?></td>
+																			<td><?php $x=0; for ($a=0; $a < count($copy); $a++) { 
+																				if ($book[$i]['title']==$copy[$a]['parent']) {
+																					if ($copy[$a]['available']==1) {
+																						$x=$x+1;
+																					}
+																				}
+																			} echo$x;?></td>
 																			<td>
 																			<div class="btn-group">
 																				<button class="btn btn-primary" data-toggle="modal" data-target="#modalview" onclick='update_modal(<?php echo json_encode($book[$i]); ?>)'>
@@ -231,30 +247,32 @@ include("viewusers.php");
 																				<h5 id="modal-ca"></h5>
 																			</div>
 																	</form>
-																	<table width="100%" class="table table-striped table-bordered table-hover table-responsive" id="dataTables-example">
+																	<table width="100%" class="table table-striped table-bordered table-hover table-responsive" id="myTable">
 																		<thead>
 																			<tr>
-																				<th>Copy No.</th>
-																				<th>Control No</th>
+																				<th>Parent</th>
+																				<th>Access Number</th>
 																				<th>Status</th>
 																				<th>Actions</th>
 																			</tr>
 																		</thead>
-																		<tbody>
+																		<tbody id="myTableBody">
+																			<?php for($i=0;$i<count($copy);$i++){ ?>
 																			<tr class="odd gradeX">
-																				<td>1</td>
-																				<td>2012-102</td>
-																				<td>Available</td>
-																				<td>
-																					<div>
-																						<a>
-																							<button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modalborrow">
-																								Borrow
-																							</button>
-																						</a>
-																					</div>
-																				</td>
+																				<td><?php echo $copy[$i]['parent'];?></td>
+										                                        <td><?php echo $copy[$i]['access_number'];?></td>
+										                                        <td><?php if ($copy[$i]['available']==1){ echo "Available";}else{echo "Unavailable";}?></td>
+										                                        <td>
+										                                          <div>
+										                                            <a>
+										                                              <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modalborrow">
+										                                                Borrow
+										                                              </button>
+										                                            </a>
+										                                          </div>
+										                                        </td>
 																			</tr>
+																			<?php } ?>
 																		</tbody>
 																	</table>
 																</div>
@@ -275,6 +293,10 @@ include("viewusers.php");
 																			<div class="form-group">
 																				<label for="callnumber">Borrower:</label>
 																				<input type="text" class="form-control" id="stud" placeholder="Enter Student ID">
+										                                        <label for="name">Access No.:</label>
+										                                        <input type="text" class="form-control" id="acc" placeholder="Enter Access Number">
+										                                        <label for="name">Ref No.:</label>
+										                                        <input type="text" class="form-control" id="ref" placeholder="Enter Reference Number">
 																			</div>
 																			<button type="submit" class="btn btn-success btn-block" onclick="borrow()">Submit</button> 
 																</div>
@@ -362,9 +384,11 @@ include("viewusers.php");
 			$("#modal-ca").text(book.category);
 		}
 		function borrow(){
+			var w = document.getElementById("ref").value;
 			var x = document.getElementById("modal-cn").innerHTML;
+			var y = document.getElementById("acc").value;
 			var z = document.getElementById("stud").value;
-			window.location.href = "borrow.php?cn="+x+"&stud="+z;
+			window.location.href = "borrow.php?cn="+x+"&stud="+z+"&ref="+w+"&acc="+y;
 		}
 		</script>
 
