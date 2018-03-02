@@ -243,7 +243,7 @@ include("viewusers.php")
                                   <label for="code">Batch No:</label>
                                   <h5 id="modal-batch" name="mbatch"></h5>
                                   <h3>Book History:</h3>
-                                  <table width="100%" class="table table-striped table-bordered table-hover table-responsive" id="dataTables-example">
+                                  <table width="100%" class="table table-striped table-bordered table-hover table-responsive" id="tables">
                                     <thead>
                                       <tr>
                                         <th>Title</th>
@@ -254,25 +254,7 @@ include("viewusers.php")
                                         <th>Actions</th>
                                       </tr>
                                     </thead>
-                                    <tbody>
-                                      <?php for($i=0;$i<count($trans);$i++){ ?>
-                                      <tr class="odd gradeX">
-                                        <td><?php for($j=0;$j<count($copy);$j++){ if($trans[$i]['copy']==$copy[$j]['access_number']){ echo $copy[$j]['parent'];}}?></td>
-                                        <td><?php echo $trans[$i]['copy'];?></td>
-                                        <td><?php echo $trans[$i]['date'];?></td>
-                                        <td><?php echo $trans[$i]['date_returned'];?></td>
-                                        <td><?php if($trans[$i]['date_returned']==""){echo "Borrowed";}else{echo "Paid";}?></td>
-                                        <td>
-                                          <div>
-                                            <a href="trans.php">
-                                              <button class="btn btn-primary btn-xs">
-                                                Edit
-                                              </button>
-                                            </a>
-                                          </div>
-                                        </td>
-                                      </tr>   
-                                      <?php }?>
+                                    <tbody class="tablebody">
                                     </tbody>
                                   </table>
                                 </div>
@@ -311,6 +293,8 @@ include("viewusers.php")
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
     <script>
+    var trans = <?php echo json_encode($trans) ?>;
+    var copy = <?php echo json_encode($copy) ?>;
     $(document).ready(function(){
       $("#myBtn").click(function(){
       $("#myModal").modal();
@@ -318,10 +302,27 @@ include("viewusers.php")
     });
     //dito third
     function update_modal(user)
-    {
+    { 
       $("#modal-name").text(user.name);
       $("#modal-code").text(user.id_code);
       $("#modal-batch").text(user.batch);
+      var str="";
+      for (var i = trans.length - 1; i >= 0; i--) {
+        if (trans[i]["user"]==user.id_code) {
+          for(var j=copy.length-1;j>=0;j--){
+            if(trans[i]['copy']==copy[j]['access_number']){
+             var y=copy[j]['parent'];
+             j=0;
+           }
+         }
+          if(trans[i]["date_returned"]){
+            var x="Paid";}
+          else{ 
+            var x="Borrowed";}
+          str+=('<tr><td>'+y+'</td><td>'+trans[i]["copy"]+'</td><td>'+trans[i]["date"]+'</td><td>'+trans[i]["date_returned"]+'</td><td>'+x+'</td><td><a href="trans.php"><button class="btn btn-primary btn-xs">Edit</button></a></td></tr>');
+        }
+      }
+      $('#tables tbody').html(str);
     }
     </script>
 </body>

@@ -257,22 +257,6 @@ include("viewusers.php");
 																			</tr>
 																		</thead>
 																		<tbody id="myTableBody">
-																			<?php for($i=0;$i<count($copy);$i++){ ?>
-																			<tr class="odd gradeX">
-																				<td><?php echo $copy[$i]['parent'];?></td>
-										                                        <td><?php echo $copy[$i]['access_number'];?></td>
-										                                        <td><?php if ($copy[$i]['available']==1){ echo "Available";}else{echo "Unavailable";}?></td>
-										                                        <td>
-										                                          <div>
-										                                            <a>
-										                                              <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modalborrow">
-										                                                Borrow
-										                                              </button>
-										                                            </a>
-										                                          </div>
-										                                        </td>
-																			</tr>
-																			<?php } ?>
 																		</tbody>
 																	</table>
 																</div>
@@ -371,6 +355,7 @@ include("viewusers.php");
 		<!-- Custom Theme JavaScript -->
 		<script src="../dist/js/sb-admin-2.js"></script>
 		<script>
+		var copy = <?php echo json_encode($copy) ?>;
 		$(document).ready(function(){ 
 			$("#myBtn").click(function(){
 			$("#myModal").modal();
@@ -382,6 +367,18 @@ include("viewusers.php");
 			$("#modal-au").text(book.author);
 			$("#modal-ti").text(book.title);
 			$("#modal-ca").text(book.category);
+		    var str="";
+		    for (var i = copy.length - 1; i >= 0; i--) {
+	    		if (copy[i]["parent"]==book.title) {
+	          	if(copy[i]['available']==1){
+		            var x="Available";
+		        }
+	          	else{ 
+		            var x="Unavailable";
+		        }
+	          	str+=('<tr><td>'+copy[i]["parent"]+'</td><td>'+copy[i]["access_number"]+'</td><td>'+x+'</td><td><a><button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modalborrow">Borrow</button></a></td></tr>');
+	        }	      $('#myTable tbody').html(str);
+	    }
 		}
 		function borrow(){
 			var w = document.getElementById("ref").value;
