@@ -87,17 +87,6 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
                         <li>
                             <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Database</a>
                         </li>
@@ -105,10 +94,13 @@
                             <a href="users.php"><i class="fa fa-bar-chart-o fa-fw"></i> Users</a>
                         </li>
                         <li>
-                            <a class="active" href="#"><i class="fa fa-table fa-fw"></i> Books</a>
+                            <a href="books.php" class="active"><i class="fa fa-table fa-fw"></i> Books</a>
                         </li>
                         <li>
                             <a href="trans.php"><i class="fa fa-shopping-cart fa-fw"></i> Transactions</a>
+                        </li>
+                        <li>
+                            <a href="summary.php"><i class="fa fa-shopping-cart fa-fw"></i> Summary</a>
                         </li>
                     </ul>
                 </div>
