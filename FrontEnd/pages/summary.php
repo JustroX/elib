@@ -124,14 +124,16 @@
                       <div class="panel-body">
                           <table width="100%" class="table table-striped table-bordered table-hover">
                               <thead>
-                                <th>Subject name here:</th>
-                                <th>Subject name here:</th>
-                                <th>Subject name here:</th>
+                                <tr>
+                                  <th>Subject</th>
+                                  <th>Number of books borrowed</th>
+                                </tr>
                               </thead>
                               <tbody>
-                                <td>Amount here:</td>
-                                <td>Amount here:</td>
-                                <td>Amount here:</td>
+                                <tr>
+                                  <td>Enter Subject:</td>
+                                  <td>Enter value:</td>
+                                </tr>
                               </tbody>
                           </table>
                           <!-- /.table-responsive -->
