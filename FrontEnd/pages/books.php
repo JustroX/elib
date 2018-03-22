@@ -103,7 +103,7 @@
                             <a href="trans.php"><i class="fa fa-shopping-cart fa-fw"></i> Transactions</a>
                         </li>
                         <li>
-                            <a href="summary.php"><i class="fa fa-shopping-cart fa-fw"></i> Summary</a>
+                            <a href="summary.php"><i class="fa fa-list-alt fa-fw"></i> Summary</a>
                         </li>
                     </ul>
                 </div>
