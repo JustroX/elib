@@ -150,15 +150,13 @@
                                       </div>
                                       <div class="form-group">
                                         <label for="subject">Subject:</label>
-                                        <div class="dropdown">
-                                          <button class="btn btn-primary dropdown-toggle greenc" type="button" data-toggle="dropdown">Select Subject
-                                          <span class="caret"></span></button>
-                                          <ul class="dropdown-menu">
-                                            <li><a href="#">Science</a></li>
-                                            <li><a href="#">General</a></li>
-                                            <li><a href="#">References</a></li>
-                                          </ul>
-                                        </div>
+                                        <label for="sel1">Select Subject (select one):</label>
+                                        <select class="form-control" id="sel1">
+                                          <option>1</option>
+                                          <option>2</option>
+                                          <option>3</option>
+                                          <option>4</option>
+                                        </select>
                                       </div>
                                       <div class="form-group">
                                         <label for="access">Access no:</label>
@@ -343,15 +341,13 @@
                                       </div>
                                       <div class="form-group">
                                         <label for="subject">Subject:</label>
-                                        <div class="dropdown">
-                                          <button class="btn btn-primary dropdown-toggle greenc" type="button" data-toggle="dropdown">Select Subject
-                                          <span class="caret"></span></button>
-                                          <ul class="dropdown-menu">
-                                            <li><a href="#">Science</a></li>
-                                            <li><a href="#">General</a></li>
-                                            <li><a href="#">References</a></li>
-                                          </ul>
-                                        </div>
+                                        <label for="sel1">Select Subject (select one):</label>
+                                        <select class="form-control" id="sel1">
+                                          <option>1</option>
+                                          <option>2</option>
+                                          <option>3</option>
+                                          <option>4</option>
+                                        </select>
                                       </div>
                                       <div class="form-group">
                                         <label for="access">Access no:</label>
