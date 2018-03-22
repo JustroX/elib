@@ -148,7 +148,7 @@
                                         <label for="title">Title:</label>
                                         <input type="text" class="form-control" id="ti" placeholder="Enter Title">
                                       </div>
-                                      <div>
+                                      <div class="form-group">
                                         <label for="subject">Subject:</label>
                                         <div class="dropdown">
                                           <button class="btn btn-primary dropdown-toggle greenc" type="button" data-toggle="dropdown">Select Subject
@@ -241,6 +241,10 @@
                                       <div class="form-group">
                                         <label for="title">Title:</label>
                                         <h5>How to be Bobo</h5>
+                                      </div>
+                                      <div class="form-group">
+                                        <label>Subject:</label>
+                                        <h5>Science</h5>
                                       </div>
                                       <div class="form-group">
                                         <label for="access">Access no:</label>
@@ -336,6 +340,18 @@
                                       <div class="form-group">
                                         <label for="title">Title:</label>
                                         <input type="text" class="form-control" id="ti" placeholder="Enter Title">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="subject">Subject:</label>
+                                        <div class="dropdown">
+                                          <button class="btn btn-primary dropdown-toggle greenc" type="button" data-toggle="dropdown">Select Subject
+                                          <span class="caret"></span></button>
+                                          <ul class="dropdown-menu">
+                                            <li><a href="#">Science</a></li>
+                                            <li><a href="#">General</a></li>
+                                            <li><a href="#">References</a></li>
+                                          </ul>
+                                        </div>
                                       </div>
                                       <div class="form-group">
                                         <label for="access">Access no:</label>
