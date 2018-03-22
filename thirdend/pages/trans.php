@@ -88,17 +88,6 @@ include("viewusers.php")
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
                         <li>
                             <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Database</a>
                         </li>
@@ -110,6 +99,9 @@ include("viewusers.php")
                         </li>
                         <li>
                             <a class="active" href="trans.php"><i class="fa fa-shopping-cart fa-fw"></i> Transactions</a>
+                        </li>
+                        <li>
+                            <a href="summary.php"><i class="fa fa-list-alt fa-fw"></i> Summary</a>
                         </li>
                     </ul>
                 </div>
@@ -135,7 +127,6 @@ include("viewusers.php")
                       <div class="panel-body">
                           <table width="100%" class="table table-striped table-bordered table-hover" id="myTable">
                               <thead>
-                                <th>Ref No.</th>
                                 <th>Student</th>
                                 <th>Book Title</th>
                                 <th>Access No.</th>
@@ -148,7 +139,6 @@ include("viewusers.php")
                               <tbody>
                                 <?php for($i=0;$i<count($trans);$i++){ ?>
                                 <tr>
-                                  <td><?php echo $trans[$i]['ref_no'];?></td>
                                   <td><?php for($j=0;$j<count($user);$j++){ if($trans[$i]['user']==$user[$j]['id_code']){ echo $user[$j]['name'];}}?></td>
                                   <td><?php for($j=0;$j<count($copy);$j++){ if($trans[$i]['copy']==$copy[$j]['access_number']){ echo $copy[$j]['parent'];}}?></td>
                                   <td><?php echo $trans[$i]['copy'];?></td>

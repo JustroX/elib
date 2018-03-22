@@ -1,5 +1,5 @@
 <?php
-include("viewusers.php")
+include("viewusers.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,13 +35,22 @@ include("viewusers.php")
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+      .modal-header, h4, .close {
+      background-color: #5cb85c;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+      }
+      .modal-footer {
+        background-color: #f9f9f9;
+      }
+    </style>
 
 </head>
 
 <body>
-
     <div id="wrapper">
-
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
@@ -92,7 +101,7 @@ include("viewusers.php")
                             <a href="trans.php"><i class="fa fa-shopping-cart fa-fw"></i> Transactions</a>
                         </li>
                         <li>
-                            <a href="summary.php"><i class="fa fa-list-alt fa-fw"></i> Summary</a>
+                            <a href="summary.php" class="active"><i class="fa fa-list-alt fa-fw"></i> Summary</a>
                         </li>
                     </ul>
                 </div>
@@ -104,81 +113,70 @@ include("viewusers.php")
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Database</h1>
+                    <h1 class="page-header">Summary of Books borrowed</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-            <!-- /.row -->
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-comments fa-5x"></i>
+              <div class="col-lg-12">
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          Summary by book subject:
+                      </div>
+                      <!-- /.panel-heading -->
+                      <div class="panel-body">
+                          <table width="100%" class="table table-striped table-bordered table-hover">
+                              <thead>
+                                <tr>
+                                  <th>Subject</th>
+                                  <th>Number of books borrowed</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Science</td>
+                                  <td><?php echo $sci; ?></td>
+                                </tr>
+                                <tr>
+                                  <td>General</td>
+                                  <td><?php echo $gen; ?></td>
+                                </tr>
+                                <tr>
+                                  <td>Reference:</td>
+                                  <td><?php echo $ref; ?></td>
+                                </tr>
+                              </tbody>
+                          </table>
+                          <!-- /.table-responsive -->
+                          <div class="modal fade" id="modalpay" role="dialog">
+                            <div class="modal-dialog">
+                              <!-- Modal content-->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 style="color:red;"><span class="glyphicon glyphicon-user"></span> User entry</h4>
                                 </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge"><?php echo count($user);?></div>
-                                    <div>Users</div>
+                                <div class="modal-body">
+                                  <form>
+                                    <div class="form-group">
+                                      <label for="name">Amount to be paid:</label>
+                                      <input type="text" class="form-control">
+                                    </div>
+                                    <button type="submit" class="btn btn-success btn-block">Pay</button>
+                                  </form>
                                 </div>
-                            </div>
-                        </div>
-                        <a href="users.php">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="panel panel-green">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-tasks fa-5x"></i>
+                                <div class="modal-footer">
+                                  <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
                                 </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge"><?php echo count($book);?></div>
-                                    <div>Books</div>
-                                </div>
+                              </div>
                             </div>
-                        </div>
-                        <a href="books.php">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="panel panel-yellow">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-shopping-cart fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge"><?php echo count($trans);?></div>
-                                    <div>Transactions</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="trans.php">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                          </div>
+                      </div>
+                      <!-- /.panel-body -->
+                  </div>
+                  <!-- /.panel -->
+              </div>
             </div>
-            <!-- /.row -->
-            <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
 

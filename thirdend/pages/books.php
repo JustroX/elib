@@ -90,17 +90,6 @@ include("viewusers.php");
 						<div class="navbar-default sidebar" role="navigation">
 								<div class="sidebar-nav navbar-collapse">
 										<ul class="nav" id="side-menu">
-												<li class="sidebar-search">
-														<div class="input-group custom-search-form">
-																<input type="text" class="form-control" placeholder="Search...">
-																<span class="input-group-btn">
-																<button class="btn btn-default" type="button">
-																		<i class="fa fa-search"></i>
-																</button>
-														</span>
-														</div>
-														<!-- /input-group -->
-												</li>
 												<li>
 														<a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Database</a>
 												</li>
@@ -113,6 +102,9 @@ include("viewusers.php");
 												<li>
 														<a href="trans.php"><i class="fa fa-shopping-cart fa-fw"></i> Transactions</a>
 												</li>
+						                        <li>
+						                            <a href="summary.php"><i class="fa fa-list-alt fa-fw"></i> Summary</a>
+						                        </li>
 										</ul>
 								</div>
 								<!-- /.sidebar-collapse -->
@@ -156,10 +148,15 @@ include("viewusers.php");
 																				<label for="title">Title:</label>
 																				<input type="text" class="form-control" id="ti" name="ti" placeholder="Enter Title">
 																			</div>
-																			<div class="form-group">
-																				<label for="access">Category:</label>
-																				<input type="text" class="form-control" id="ca" name="ca" placeholder="Enter Category">
-																			</div>
+									                                      <div class="form-group">
+									                                        <label for="subject">Subject:</label>
+									                                        <label for="sel1">Select Subject (select one):</label>
+									                                        <select class="form-control" id="sel1" name="sel1">
+									                                          <option value="Science">Science</option>
+									                                          <option value="General">General</option>
+									                                          <option value="Reference">Reference</option>
+									                                        </select>
+									                                      </div>
 																			<div class="form-group">
 																				<label for="access">Number of Copies:</label>
 																				<input type="text" class="form-control" id="co" name="co" placeholder="Enter Number of Copies">
@@ -186,7 +183,7 @@ include("viewusers.php");
 																			<th>Call Number</th>
 																			<th>Author</th>
 																			<th>Title</th>
-																			<th>Category</th>
+																			<th>Subject</th>
 																			<th>No. of Copies Available</th>
 																			<th>Action</th>
 																	</tr>
@@ -279,8 +276,6 @@ include("viewusers.php");
 																				<input type="text" class="form-control" id="stud" placeholder="Enter Student ID">
 										                                        <label for="name">Access No.:</label>
 										                                        <input type="text" class="form-control" id="acc" placeholder="Enter Access Number">
-										                                        <label for="name">Ref No.:</label>
-										                                        <input type="text" class="form-control" id="ref" placeholder="Enter Reference Number">
 																			</div>
 																			<button type="submit" class="btn btn-success btn-block" onclick="borrow()">Submit</button> 
 																</div>
@@ -381,11 +376,10 @@ include("viewusers.php");
 	    }
 		}
 		function borrow(){
-			var w = document.getElementById("ref").value;
 			var x = document.getElementById("modal-cn").innerHTML;
 			var y = document.getElementById("acc").value;
 			var z = document.getElementById("stud").value;
-			window.location.href = "borrow.php?cn="+x+"&stud="+z+"&ref="+w+"&acc="+y;
+			window.location.href = "borrow.php?cn="+x+"&stud="+z+"&acc="+y;
 		}
 		</script>
 

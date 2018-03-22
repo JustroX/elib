@@ -3,7 +3,7 @@ include("functions.php");
 $cn=$_POST["cn"];
 $ti=$_POST["ti"];
 $au=$_POST["au"];
-$ca=$_POST["ca"];
+$ca=$_POST["sel1"];
 $co=$_POST["co"];	
 $an=$_POST["an"];
 $arr=["call_number"=>$cn,"title"=>$ti,"author"=>$au,"category"=>$ca];
