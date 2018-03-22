@@ -42,6 +42,9 @@
       .modal-footer {
         background-color: #f9f9f9;
       }
+      .greenc{
+        background-color: #5cb85c;
+      }
     </style>
 
 </head>
@@ -145,6 +148,18 @@
                                         <label for="title">Title:</label>
                                         <input type="text" class="form-control" id="ti" placeholder="Enter Title">
                                       </div>
+                                      <div>
+                                        <label for="subject">Subject:</label>
+                                        <div class="dropdown">
+                                          <button class="btn btn-primary dropdown-toggle greenc" type="button" data-toggle="dropdown">Select Subject
+                                          <span class="caret"></span></button>
+                                          <ul class="dropdown-menu">
+                                            <li><a href="#">Science</a></li>
+                                            <li><a href="#">General</a></li>
+                                            <li><a href="#">References</a></li>
+                                          </ul>
+                                        </div>
+                                      </div>
                                       <div class="form-group">
                                         <label for="access">Access no:</label>
                                         <input type="text" class="form-control" id="an" placeholder="Enter Access no">
@@ -175,6 +190,7 @@
                                       <th>Call Number</th>
                                       <th>Author</th>
                                       <th>Title</th>
+                                      <th>Subject</th>
                                       <th>Access No.</th>
                                       <th>Date</th>
                                       <th>No. of copies</th>
@@ -186,6 +202,7 @@
                                       <td>2012-102</td>
                                       <td>Justine Romero</td>
                                       <td>How to be Just</td>
+                                      <td>Science</td>
                                       <td class="center">4123</td>
                                       <td class="center">8-16-17</td>
                                       <td>20</td>
