@@ -1,8 +1,15 @@
 <?php
 include("functions.php");
 $sci=0;
-$gen=0;
-$ref=0;
+$cs=0;
+$pp=0;
+$r=0;
+$ss=0;
+$lang=0;
+$t=0;
+$ar=0;
+$lit=0;
+$hg=0;
 $user=select("user","*");
 $book=select("book","*");
 $trans=select("transactions","*");
@@ -15,11 +22,32 @@ for ($a=0; $a < count($trans); $a++) {
 						if ($book[$c]['category']=="Science") {
 							$sci=$sci+1;
 						}
-						if ($book[$c]['category']=="General") {
-							$gen=$gen+1;
+						if ($book[$c]['category']=="Computer Science, Information and General Works") {
+							$cs=$cs+1;
 						}
-						if ($book[$c]['category']=="Reference") {
-							$ref=$ref+1;
+						if ($book[$c]['category']=="Philosophy and Psychology") {
+							$pp=$pp+1;
+						}
+						if ($book[$c]['category']=="Religion") {
+							$r=$r+1;
+						}
+						if ($book[$c]['category']=="Social Science") {
+							$ss=$ss+1;
+						}
+						if ($book[$c]['category']=="Language") {
+							$lang=$lang+1;
+						}
+						if ($book[$c]['category']=="Technology") {
+							$t=$t+1;
+						}
+						if ($book[$c]['category']=="Arts and Recreation") {
+							$ar=$ar+1;
+						}
+						if ($book[$c]['category']=="Literature") {
+							$lit=$lit+1;
+						}
+						if ($book[$c]['category']=="History and Geography") {
+							$hg=$hg+1;
 						}
 
 					}

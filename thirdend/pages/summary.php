@@ -134,16 +134,44 @@ include("viewusers.php");
                               </thead>
                               <tbody>
                                 <tr>
+                                  <td>Computer Science, Information and General Works</td>
+                                  <td><?php echo $cs; ?></td>
+                                </tr>
+                                <tr>
+                                  <td>Philosophy and Psychology</td>
+                                  <td><?php echo $pp; ?></td>
+                                </tr>
+                                <tr>
+                                  <td>Religion</td>
+                                  <td><?php echo $r; ?></td>
+                                </tr>
+                                <tr>
+                                  <td>Social Science</td>
+                                  <td><?php echo $ss; ?></td>
+                                </tr>
+                                <tr>
+                                  <td>Language</td>
+                                  <td><?php echo $lang; ?></td>
+                                </tr>
+                                <tr>
                                   <td>Science</td>
                                   <td><?php echo $sci; ?></td>
                                 </tr>
                                 <tr>
-                                  <td>General</td>
-                                  <td><?php echo $gen; ?></td>
+                                  <td>Technology</td>
+                                  <td><?php echo $t; ?></td>
                                 </tr>
                                 <tr>
-                                  <td>Reference:</td>
-                                  <td><?php echo $ref; ?></td>
+                                  <td>Arts and Recreation</td>
+                                  <td><?php echo $ar; ?></td>
+                                </tr>
+                                <tr>
+                                  <td>Literature</td>
+                                  <td><?php echo $lit; ?></td>
+                                </tr>
+                                <tr>
+                                  <td>History and Geography</td>
+                                  <td><?php echo $hg; ?></td>
                                 </tr>
                               </tbody>
                           </table>

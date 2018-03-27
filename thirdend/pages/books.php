@@ -152,9 +152,16 @@ include("viewusers.php");
 									                                        <label for="subject">Subject:</label>
 									                                        <label for="sel1">Select Subject (select one):</label>
 									                                        <select class="form-control" id="sel1" name="sel1">
+									                                          <option value="Computer Science, Information and General Works">Computer Science, Information and General Works</option>
+									                                          <option value="Philosophy and Psychology">Philosophy and Psychology</option>
+									                                          <option value="Religion">Religion</option>
+									                                          <option value="Social Science">Social Science</option>
+									                                          <option value="Language">Language</option>
 									                                          <option value="Science">Science</option>
-									                                          <option value="General">General</option>
-									                                          <option value="Reference">Reference</option>
+									                                          <option value="Technology">Technology</option>
+									                                          <option value="Arts and Recreation">Arts and Recreation</option>
+									                                          <option value="Literature">Literature</option>
+									                                          <option value="History and Geography">History and Geography</option>
 									                                        </select>
 									                                      </div>
 																			<div class="form-group">
@@ -162,8 +169,8 @@ include("viewusers.php");
 																				<input type="text" class="form-control" id="co" name="co" placeholder="Enter Number of Copies">
 																			</div>
 																			<div class="form-group">
-																				<label for="access">Starting Access Number:</label>
-																				<input type="text" class="form-control" id="an" name="an" placeholder="Enter Starting Access Number">
+																				<label for="access">Starting Accession Number:</label>
+																				<input type="text" class="form-control" id="an" name="an" placeholder="Enter Starting Accession Number">
 																			</div>
 																			<button type="submit" class="btn btn-success btn-block"> Submit</button>
 																		</form>
@@ -244,11 +251,12 @@ include("viewusers.php");
 																				<h5 id="modal-ca"></h5>
 																			</div>
 																	</form>
+																	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addcopymodal">Add copy/ies</button>
 																	<table width="100%" class="table table-striped table-bordered table-hover table-responsive" id="myTable">
 																		<thead>
 																			<tr>
 																				<th>Parent</th>
-																				<th>Access Number</th>
+																				<th>Accession Number</th>
 																				<th>Status</th>
 																				<th>Actions</th>
 																			</tr>
@@ -274,8 +282,8 @@ include("viewusers.php");
 																			<div class="form-group">
 																				<label for="callnumber">Borrower:</label>
 																				<input type="text" class="form-control" id="stud" placeholder="Enter Student ID">
-										                                        <label for="name">Access No.:</label>
-										                                        <input type="text" class="form-control" id="acc" placeholder="Enter Access Number">
+										                                        <label for="name">Accession No.:</label>
+										                                        <input type="text" class="form-control" id="acc" placeholder="Enter Accession Number">
 																			</div>
 																			<button type="submit" class="btn btn-success btn-block" onclick="borrow()">Submit</button> 
 																</div>
@@ -285,6 +293,32 @@ include("viewusers.php");
 															</div>
 														</div>
 													</div>
+													<div class="modal fade" id="addcopymodal" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 style="color:red;"><span class="glyphicon glyphicon-book"></span> Add another copy</h4>
+                                  </div>
+                                  <div class="modal-body">
+                                      <div class="form-group">
+                                        <label for="access">Starting Accession no:</label>
+                                        <input type="text" class="form-control" id="ean" name="ean" placeholder="Enter Accession no">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="nocopies">No. of copies:</label>
+                                        <input type="text" class="form-control" id="enc" name="enc" placeholder="Enter No of copies">
+                                      </div>
+                                      <button type="submit" class="btn btn-success btn-block" onclick="addcopy()"> Submit</button>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
 													<div class="modal fade" id="modal2" role="dialog">
 														<div class="modal-dialog">
 
@@ -380,6 +414,12 @@ include("viewusers.php");
 			var y = document.getElementById("acc").value;
 			var z = document.getElementById("stud").value;
 			window.location.href = "borrow.php?cn="+x+"&stud="+z+"&acc="+y;
+		}
+		function addcopy(){
+			var x = document.getElementById("modal-ti").innerHTML;
+			var y = document.getElementById("ean").value;
+			var z = document.getElementById("enc").value;
+			window.location.href = "addcopy.php?ti="+x+"&ean="+y+"&enc="+z;
 		}
 		</script>
 
