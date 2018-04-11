@@ -4,7 +4,7 @@ $cn=$_GET["cn"];
 $stud=$_GET["stud"];
 $acc=$_GET["acc"];
 $arr=["copy"=>$acc,"user"=>$stud,"date"=>date("Y-m-d")];
-$arr1=["available"=>0,"date_borrowed"=>date("Y-m-d")];
+$arr1=["available"=>0,"date_borrowed"=>"1"];
 insert("transactions",$arr);
 update("copy",$arr1,["access_number"=>$acc]);
 header("Location:books.php");

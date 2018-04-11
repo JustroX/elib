@@ -329,7 +329,7 @@ include("viewusers.php");
 																		<h4 style="color:red;"><span class="glyphicon glyphicon-book"></span> Edit Book entry</h4>
 																	</div>
 																	<div class="modal-body">
-																		<form method="POST" action="addbooks.php">
+																		<form method="POST" action="editbook.php">
 																			<div class="form-group">
 																				<label for="callnumber">Call Number:</label>
 																				<input type="text" class="form-control" id="cn" placeholder="Enter Call Number">
@@ -341,10 +341,6 @@ include("viewusers.php");
 																			<div class="form-group">
 																				<label for="title">Title:</label>
 																				<input type="text" class="form-control" id="ti" placeholder="Enter Title">
-																			</div>
-																			<div class="form-group">
-																				<label for="access">Category:</label>
-																				<input type="text" class="form-control" id="ca" placeholder="Enter Category">
 																			</div>
 																			<button type="submit" class="btn btn-success btn-block"> Submit</button>
 																		</form>
